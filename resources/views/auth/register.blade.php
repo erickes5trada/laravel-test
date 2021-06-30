@@ -9,8 +9,48 @@
         <form method="POST" action="{{ route('register') }}">
             @csrf
 
+            <div class="mt-4">
+                <x-jet-label for="n_empleado" value="{{ __('Número de empleado') }}" />
+                <x-jet-input id="n_empleado" class="block mt-1 w-full" type="text" name="n_empleado" required />
+            </div>
+
+            <div class="mt-4">
+                <x-jet-label for="Nombre" value="{{ __('Nombre') }}" />
+                <x-jet-input id="Nombre" class="block mt-1 w-full" type="text" name="nombre" required/>
+            </div>
+
+            <div class="mt-4">
+                <x-jet-label for="apellidoPat" value="{{ __('Apellido Paterno') }}" />
+                <x-jet-input id="apellidoPat" class="block mt-1 w-full" type="text" name="apellidoPat" required/>
+            </div>
+
+            <div class="mt-4">
+                <x-jet-label for="apellidoMat" value="{{ __('Apellido Materno') }}" />
+                <x-jet-input id="apellidoMat" class="block mt-1 w-full" type="text" name="apellidoMat" required/>
+            </div>
+
+            <div class="mt-4">
+                <x-jet-label for="role_id" value="{{ __('Rol del usuario:') }}" />
+                <select name="role_id" class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm block mt-1 w-full">
+                    <option value="1">Auxiliar</option>
+                    <option value="2">Encargado</option>
+                    <option value="3">Coordinador</option>
+                    <option value="4">Superusuario</option>
+                </select>
+            </div>
+
+            <div class="mt-4">
+                <x-jet-label for="status_id" value="{{ __('Status del usuario:') }}" />
+                <select name="status_id" class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm block mt-1 w-full">
+                    <option value="1">Activo</option>
+                    <option value="2">Inactivo</option>
+                </select>
+            </div>
+
+            
+
             <div>
-                <x-jet-label for="name" value="{{ __('Name') }}" />
+                <x-jet-label for="name" value="{{ __('Usario') }}" />
                 <x-jet-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
             </div>
 
@@ -28,6 +68,7 @@
                 <x-jet-label for="password_confirmation" value="{{ __('Confirm Password') }}" />
                 <x-jet-input id="password_confirmation" class="block mt-1 w-full" type="password" name="password_confirmation" required autocomplete="new-password" />
             </div>
+
 
             @if (Laravel\Jetstream\Jetstream::hasTermsAndPrivacyPolicyFeature())
                 <div class="mt-4">

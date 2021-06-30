@@ -30,7 +30,7 @@ class User extends Authenticatable
         'nombre',
         'apellidoPat',
         'apellidoMat',
-        'username', // username 
+        'name', // username 
         'email', 
         'password',
         'role_id',
