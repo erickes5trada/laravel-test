@@ -1,5 +1,5 @@
-<x-guest-layout>
-    <x-jet-authentication-card>
+<x-guest-layout class="container">
+    <x-jet-authentication-card class="row mt-5 mb-5">
         <x-slot name="logo">
             <x-jet-authentication-card-logo />
         </x-slot>
@@ -29,43 +29,44 @@
                 <x-jet-input id="apellidoMat" class="block mt-1 w-full" type="text" name="apellidoMat" required/>
             </div>
 
+            <div class="flex">
+                        <div class="mt-4 flex-1">
+                            <x-jet-label for="role_id" value="{{ __('Rol del usuario:') }}" />
+                            <select name="role_id" class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm block mt-1 w-full ">
+                                <option value="1">Auxiliar</option>
+                                <option value="2">Encargado</option>
+                                <option value="3">Coordinador</option>
+                                <option value="4">Superusuario</option>
+                            </select>
+                        </div>
+                        &nbsp;
+                        <div class="mt-4 flex-1">
+                            <x-jet-label for="status_id" value="{{ __('Status del usuario:') }}" />
+                            <select name="status_id" class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm block mt-1 w-full">
+                                <option value="1">Activo</option>
+                                <option value="2">Inactivo</option>
+                            </select>
+                        </div>
+            </div>
+
+        
             <div class="mt-4">
-                <x-jet-label for="role_id" value="{{ __('Rol del usuario:') }}" />
-                <select name="role_id" class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm block mt-1 w-full">
-                    <option value="1">Auxiliar</option>
-                    <option value="2">Encargado</option>
-                    <option value="3">Coordinador</option>
-                    <option value="4">Superusuario</option>
-                </select>
+                <x-jet-label for="usuario" value="{{ __('Usuario') }}" />
+                <x-jet-input id="usuario" class="block mt-1 w-full" type="text" name="username" :value="old('username')" required autofocus autocomplete="name" />
             </div>
 
             <div class="mt-4">
-                <x-jet-label for="status_id" value="{{ __('Status del usuario:') }}" />
-                <select name="status_id" class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm block mt-1 w-full">
-                    <option value="1">Activo</option>
-                    <option value="2">Inactivo</option>
-                </select>
-            </div>
-
-            
-
-            <div>
-                <x-jet-label for="name" value="{{ __('Usario') }}" />
-                <x-jet-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
-            </div>
-
-            <div class="mt-4">
-                <x-jet-label for="email" value="{{ __('Email') }}" />
+                <x-jet-label for="email" value="{{ __('Correo electrónico') }}" />
                 <x-jet-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
             </div>
 
             <div class="mt-4">
-                <x-jet-label for="password" value="{{ __('Password') }}" />
+                <x-jet-label for="password" value="{{ __('Contraseña') }}" />
                 <x-jet-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="new-password" />
             </div>
 
             <div class="mt-4">
-                <x-jet-label for="password_confirmation" value="{{ __('Confirm Password') }}" />
+                <x-jet-label for="password_confirmation" value="{{ __('Confirmar contraseña') }}" />
                 <x-jet-input id="password_confirmation" class="block mt-1 w-full" type="password" name="password_confirmation" required autocomplete="new-password" />
             </div>
 
