@@ -14,7 +14,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
+    // anteriomente return view('welcome');
 });
 
 // middleware para la autenticación de jetstream
