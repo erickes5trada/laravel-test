@@ -19,7 +19,7 @@ Route::get('/', function () {
 });
 
 // middleware para la autenticación de jetstream
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+Route::middleware(['auth:sanctum', 'verified'])->get('/dash', function () {
     return view('dash.index');
 })->name('dash');
 
