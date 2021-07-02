@@ -15,6 +15,10 @@ module.exports = {
                 sans: ['Nunito', ...defaultTheme.fontFamily.sans],
             },
         },
+        colors: {
+            'blueV': '006f8f',
+            'blueV-light': 'f2f9fb',
+        }
     },
 
     variants: {
